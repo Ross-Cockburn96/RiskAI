@@ -31,5 +31,5 @@ public class riskMain {
         }
         Collections.shuffle(deck);
     }
-    
+
 }
