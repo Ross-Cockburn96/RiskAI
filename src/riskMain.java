@@ -16,14 +16,7 @@ public class riskMain {
         }catch(IOException e){
             e.printStackTrace();
         }
-        for(Card c : deck){
-            System.out.println(c.getRegion());
-        }
-        territoryAssigner(Player.USER);
-    }
-    private static void territoryAssigner(Player player){
-        int i =
-        for ()
+        GameTest g1 = new GameTest();
     }
     private static void deckCreator()throws IOException{    //reads riskCards.txt file and creates risk playing card objects
         deck = new ArrayList<>();
@@ -32,7 +25,6 @@ public class riskMain {
         String readline = "";
         while ((readline = b.readLine()) != null) {     //loops through each line in the text file until there is no more content
             String region = readline.split("-")[0]; //each line of the file consits of {region} - {unit type} so we split on a regex of '-'
-            System.out.println(region);
             switch (readline.split("-")[1]) {
                 case "CANNON":
                     deck.add(new Card(region, UnitType.CANNON));
@@ -46,5 +38,4 @@ public class riskMain {
         }
         Collections.shuffle(deck);  //shuffles deck randomly
     }
-
 }
