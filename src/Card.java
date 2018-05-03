@@ -2,7 +2,7 @@
 
 public class Card {
     private String region;
-    private UnitType unitType;  //paul is silly 
+    private UnitType unitType;  
     public Card(String region, UnitType unitType ){
         this.region = region;
         this.unitType = unitType;
