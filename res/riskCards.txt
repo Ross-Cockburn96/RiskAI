@@ -1,12 +1,12 @@
 Japan - Horse
 China - Canon 
-Ukraine - Solider
-North Atria - Solider
+Ukraine - Soldier
+North Atria - Soldier
 Congo - Canon 
-Afghanistan - Solider 
+Afghanistan - Soldier
 Middle East - Canon 
 Venezuela - Horse
-Southern Europe - Solider 
+Southern Europe - Soldier
 Northern Europe - Horse
 Greenland - Horse 
 Siam - Horse
@@ -15,27 +15,27 @@ India - Horse
 Alberta - Canon 
 Egypt - Horse
 Kamchatka - Canon 
-Western Europe - Solider
-Indonesia - Solider 
+Western Europe - Soldier
+Indonesia - Soldier
 Yakutsk - Canon 
-Argentina - Solider
+Argentina - Soldier
 Eastern Australia - Horse
-East Africa - Solider
+East Africa - Soldier
 Western Australia - Canon 
 Madagascar - Horse
-Siberia - Solider
+Siberia - Soldier
 Ontario - Canon 
-Central America - Solider
-Brazil - Solider
+Central America - Soldier
+Brazil - Soldier
 Northwest Territory - Horse
 Peru - Horse
 South Africa - Canon 
 Western United States - Canon 
 Quebec - Canon 
-Great Britain - Solider
-Scandinavia - Solider
+Great Britain - Soldier
+Scandinavia - Soldier
 Mongolia - Horse
-Ural - Solider
+Ural - Soldier
 Iceland - Horse
 Eastern United States - Canon 
 New Guinea - Horse

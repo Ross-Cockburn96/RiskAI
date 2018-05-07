@@ -1,3 +1,3 @@
 public interface Observer {
-    public void update(Subject region, Player owner);
+    void update(Region region, Player owner);
 }

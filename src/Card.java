@@ -13,5 +13,9 @@ public class Card {
     public UnitType getUnitType(){
         return unitType;
     }
+    @Override
+    public String toString(){
+        return("Card for Region: " + getRegion() + " with unit type " + getUnitType());
+    }
 }
 
