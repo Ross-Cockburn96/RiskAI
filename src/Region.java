@@ -10,6 +10,7 @@ public class Region implements Subject{
     private List<Observer> observers;
     private Player owner;
     private String name;
+    private List<UnitType> occupyingUnits = new ArrayList<>();
     public Region(String name){
         observers = new ArrayList<>();  //contains list of objects that are observing this Region
         this.name = name;
@@ -32,6 +33,12 @@ public class Region implements Subject{
         for (Observer o : observers){
             o.update(this, owner);
         }
+    }
+    public void addUnits(ArrayList<UnitType> units){
+        occupyingUnits.addAll(units);
+    }
+    public void removeUnit(ArrayList<UnitType> units){
+        occupyingUnits.removeAll(units);
     }
     public void setOwner(Player owner){ //change the state of this region by changing what player owns it
         this.owner = owner;

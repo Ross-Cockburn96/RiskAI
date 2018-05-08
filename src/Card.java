@@ -2,12 +2,15 @@
 
 public class Card {
     private String region;
-    private UnitType unitType;  
-    public Card(String region, UnitType unitType ){
+    private UnitType unitType;
+    private String continent;
+    public Card(String region, UnitType unitType, String continent ){
         this.region = region;
         this.unitType = unitType;
+        this.continent = continent;
     }
-    public String getRegion(){
+    public String getContinent(){return getContinent();}
+    public String getRegionName(){
         return region;
     }
     public UnitType getUnitType(){
@@ -15,7 +18,7 @@ public class Card {
     }
     @Override
     public String toString(){
-        return("Card for Region: " + getRegion() + " with unit type " + getUnitType());
+        return("Card for Region: " + getRegionName() + " with unit type " + getUnitType());
     }
 }
 

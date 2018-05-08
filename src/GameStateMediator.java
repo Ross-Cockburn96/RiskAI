@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class GameStateMediator implements Mediator {
     @Override
-    public void Reinforce(Region r, UnitType unit) {
-
+    public void Reinforce(Region r, ArrayList<UnitType> units) {
+        r.addUnits(units);
     }
 
     @Override

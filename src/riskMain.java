@@ -6,5 +6,6 @@ public class riskMain {
 
     public static void main(String[] args) throws IOException{
         GameState.initialiseState();
+        
     }
 }
