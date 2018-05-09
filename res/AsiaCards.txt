@@ -1,0 +1,12 @@
+Japan,Horse,Asia
+China,Canon,Asia
+Afghanistan,Soldier,Asia
+Middle East,Canon,Asia
+Siam,Horse,Asia
+Irkutsk,Canon,Asia
+India,Horse,Asia
+Kamchatka,Canon,Asia
+Yakutsk,Canon,Asia
+Siberia,Soldier,Asia
+Mongolia,Horse,Asia
+Ural,Soldier,Asia

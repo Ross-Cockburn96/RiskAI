@@ -1,0 +1,4 @@
+Venezuela,Horse,S_America
+Argentina,Soldier,S_America
+Brazil,Soldier,S_America
+Peru,Horse,S_America

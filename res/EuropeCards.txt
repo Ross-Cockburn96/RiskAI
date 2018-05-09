@@ -1,0 +1,7 @@
+Ukraine,Soldier,Europe
+Southern Europe,Soldier,Europe
+Northern Europe,Horse,Europe
+Western Europe,Soldier,Europe
+Great Britain,Soldier,Europe
+Scandinavia,Soldier,Europe
+Iceland,Horse,Europe

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*This class represents regions on the game board that make up continents
@@ -10,7 +11,7 @@ public class Region implements Subject{
     private List<Observer> observers;
     private Player owner;
     private String name;
-    private List<UnitType> occupyingUnits = new ArrayList<>();
+    private List<UnitType> occupyingUnits = new ArrayList<>(Arrays.asList(UnitType.SOLDIER));
     public Region(String name){
         observers = new ArrayList<>();  //contains list of objects that are observing this Region
         this.name = name;
@@ -18,7 +19,7 @@ public class Region implements Subject{
     @Override
     public void register(Observer o) {  //this method is called when an observer is constructed.
         observers.add(o);
-        System.out.println("new registered observer for region " + name);
+        System.out.println("observer " + o.getObserverID() + " registered to region " + name);
     }
 
     @Override
@@ -42,10 +43,14 @@ public class Region implements Subject{
     }
     public void setOwner(Player owner){ //change the state of this region by changing what player owns it
         this.owner = owner;
+        System.out.println("observer is " + observers.get(0).getObserverID());
         notifyObserver();
     }
     @Override
     public String toString(){
         return name;
+    }
+    public Player getOwner(){
+        return owner;
     }
 }

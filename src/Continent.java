@@ -18,11 +18,20 @@ public class Continent implements Observer {
     }
     @Override
     public void update(Region region, Player ownership) {  //called when one of the observed regions' states has changed
-        regions.get(region).setOwner(ownership);
         printRegionOwners();
     }
-    private void printRegionOwners(){
-        System.out.println(regions.values());
+
+    @Override
+    public int getObserverID() {
+        return observerID;
     }
 
+    private void printRegionOwners(){
+        for (Region r : regions.values()){
+            System.out.println("Region " + r + " owned by " + r.getOwner());
+        }
+    }
+    public int getObserverId(){
+        return observerID;
+    }
 }
