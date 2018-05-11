@@ -1,9 +1,10 @@
 import java.io.IOException;
+import java.util.ArrayList;
 
 enum UnitType {CANON, HORSE, SOLDIER, WILDCARD}
-enum Player {USER, AI, NEUTRAL, DONKEY}
+enum PlayerEnum {USER, AI, NEUTRAL}
 public class riskMain {
-
+    private static Boolean gameOver = false;
     public static void main(String[] args) {
         try {
             GameState.createDeck();
@@ -12,6 +13,12 @@ public class riskMain {
         }
         GameState state = new GameState();
         state.initialiseState();
+        GameStateMediator mediator = new GameStateMediator();
+        startGame(state);
     }
+    private static void startGame(GameState state ){
+        while (!gameOver){
 
+        }
+    }
 }

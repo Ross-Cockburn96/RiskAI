@@ -1,4 +1,4 @@
 public interface Observer {
-    void update(Region region, Player owner);
+    void update(Region region);
     int getObserverID();
 }

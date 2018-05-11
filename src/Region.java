@@ -9,7 +9,7 @@ an example of such an observer is a continent.
 
 public class Region implements Subject{
     private List<Observer> observers;
-    private Player owner;
+    private PlayerEnum owner;
     private String name;
     private List<UnitType> occupyingUnits = new ArrayList<>(Arrays.asList(UnitType.SOLDIER));
     public Region(String name){
@@ -32,16 +32,16 @@ public class Region implements Subject{
     @Override
     public void notifyObserver() {  //whenever this region's state changes in any way all registered observers will be updated
         for (Observer o : observers){
-            o.update(this, owner);
+            o.update(this);
         }
     }
     public void addUnits(ArrayList<UnitType> units){
         occupyingUnits.addAll(units);
     }
-    public void removeUnit(ArrayList<UnitType> units){
+    public void removeUnits(ArrayList<UnitType> units){
         occupyingUnits.removeAll(units);
     }
-    public void setOwner(Player owner){ //change the state of this region by changing what player owns it
+    public void setOwner(PlayerEnum owner){ //change the state of this region by changing what player owns it
         this.owner = owner;
         System.out.println("observer is " + observers.get(0).getObserverID());
         notifyObserver();
@@ -50,7 +50,14 @@ public class Region implements Subject{
     public String toString(){
         return name;
     }
-    public Player getOwner(){
+    public PlayerEnum getOwner(){
         return owner;
+    }
+    public String getUnits(){
+        StringBuilder str = new StringBuilder();
+        for (UnitType u : occupyingUnits){
+            str.append(u + ", ");
+        }
+        return str.toString();
     }
 }

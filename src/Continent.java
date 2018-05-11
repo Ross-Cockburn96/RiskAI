@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Continent implements Observer {
-    private Player owner;
+    private PlayerEnum owner;
 
     //static used as counter
     private static int observerIDTracker = 0;
@@ -17,8 +18,8 @@ public class Continent implements Observer {
         }
     }
     @Override
-    public void update(Region region, Player ownership) {  //called when one of the observed regions' states has changed
-        printRegionOwners();
+    public void update(Region region) {  //called when one of the observed regions' states has changed
+        System.out.println("Region " + region + " is now owned by " + region.getOwner());
     }
 
     @Override
@@ -26,12 +27,10 @@ public class Continent implements Observer {
         return observerID;
     }
 
-    private void printRegionOwners(){
-        for (Region r : regions.values()){
-            System.out.println("Region " + r + " owned by " + r.getOwner());
-        }
-    }
     public int getObserverId(){
         return observerID;
+    }
+    public ArrayList<Region> getRegionsInContinent(){
+        return new ArrayList<>(regions.values());
     }
 }

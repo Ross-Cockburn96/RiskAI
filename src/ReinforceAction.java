@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class ReinforceAction implements PlayerAction {
     private GameStateMediator m;
@@ -18,6 +17,7 @@ public class ReinforceAction implements PlayerAction {
     }
     @Override
     public void execute() {
-        m.Reinforce(r, units);
+        m.reinforce(r, units);
     }
+
 }

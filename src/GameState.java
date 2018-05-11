@@ -63,7 +63,7 @@ public class GameState {
     private void assignTerritoriesToPlayers(){
         int counter =0;
         while(counter < 42) {
-            for (Player p : Player.values()) {
+            for (PlayerEnum p : PlayerEnum.values()) {
                 try{
                     Card card = deck.get(counter);
                     regions.get(card.getRegionName()).setOwner(p);
@@ -75,5 +75,7 @@ public class GameState {
             }
         }
     }
-
+    public Continent getContinent(String continentName){
+        return continents.get(continentName);
+    }
 }
