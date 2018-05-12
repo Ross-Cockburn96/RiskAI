@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 enum UnitType {CANON, HORSE, SOLDIER, WILDCARD}
-enum Player {USER, AI, NEUTRAL}
+enum PlayerEnum {USER, AI, NEUTRAL}
 public class riskMain {
 
     public static void main(String[] args) {
