@@ -50,6 +50,7 @@ public class Region implements Subject{
     public String toString(){
         return name;
     }
+
     public PlayerEnum getOwner(){
         return owner;
     }

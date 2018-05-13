@@ -5,20 +5,38 @@ public class GameState {
     private static List<Card> deck;
     private  Map<String, Region> regions ;
     private  Map<String, Continent> continents;
-    private static final String[] continentNames = new String[]{"Australia", "Europe", "Asia", "Africa", "N_America", "S_America"};
-
+    private static  Map<String, Integer> continentReinforcementValues ;
+    private Map<PlayerEnum, Player> players;
+    public static final String[] continentNames = new String[]{"Australia", "Europe", "Asia", "Africa", "N_America", "S_America"};
 
     public void initialiseState()  {
+        addContinentValues();
         try {
             createContinentsAndRegions();
         }catch (IOException e ){
             System.out.println("Searching for file in ");
             e.printStackTrace();
         }
+        createPlayers();
         assignTerritoriesToPlayers();    //this method deals the cards to the players assigning them initial ownership of regions
         deck.add(new Card(null,UnitType.WILDCARD, null));
         deck.add(new Card(null, UnitType.WILDCARD, null));
         Collections.shuffle(deck);
+    }
+    private void addContinentValues(){
+        continentReinforcementValues = new HashMap<>();
+        continentReinforcementValues.put("Australia", 2);
+        continentReinforcementValues.put("Europe", 5);
+        continentReinforcementValues.put("Asia", 7 );
+        continentReinforcementValues.put("Africa", 3);
+        continentReinforcementValues.put("N_America", 5);
+        continentReinforcementValues.put("S_America", 2);
+    }
+    private void createPlayers(){
+        players = new HashMap<>();
+        players.put(PlayerEnum.USER, new User());
+        players.put(PlayerEnum.AI, new AI());
+        players.put(PlayerEnum.NEUTRAL, new Neutral());
     }
     private void createContinentsAndRegions() throws IOException{
         regions = new HashMap<>();
@@ -30,12 +48,12 @@ public class GameState {
             String readline = "";
             while ((readline = b.readLine()) != null) {     //loops through each line in the text file until there is no more content
                 String region = readline.split(",")[0]; //splits the contents to get region name
-                String continent = readline.split(",")[2]; //splits the contents to get the continent name
                 Region temp = new Region(region);
                 regions.put(region,temp);
                 regionsInCont.put(region, temp);
             }
-            continents.put(s,new Continent(regionsInCont));
+            System.out.println(regionsInCont.size());
+            continents.put(s,new Continent(regionsInCont, continentReinforcementValues.get(s)));
         }
     }
     public static void createDeck() throws IOException {
@@ -62,11 +80,13 @@ public class GameState {
     }
     private void assignTerritoriesToPlayers(){
         int counter =0;
+
         while(counter < 42) {
             for (PlayerEnum p : PlayerEnum.values()) {
                 try{
                     Card card = deck.get(counter);
                     regions.get(card.getRegionName()).setOwner(p);
+                    players.get(p).addOwnedRegion(regions.get(card.getRegionName()));
                     counter++;
                 }catch(IndexOutOfBoundsException e){
                     break;
@@ -77,5 +97,8 @@ public class GameState {
     }
     public Continent getContinent(String continentName){
         return continents.get(continentName);
+    }
+    public Player getPlayer(PlayerEnum player){
+        return players.get(player);
     }
 }
