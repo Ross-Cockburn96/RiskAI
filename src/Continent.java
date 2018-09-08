@@ -16,7 +16,9 @@ public class Continent implements Observer {
         this.worth = value;
         this.observerID = ++ observerIDTracker;
         System.out.println("new observer " + this.observerID);
-        for (Subject s : regions.values()){ //each region in the continent must register this observer
+    }
+    public void registerWithRegions(){
+        for (Subject s : regions.values()){
             s.register(this);
         }
     }
@@ -31,9 +33,6 @@ public class Continent implements Observer {
         return observerID;
     }
 
-    public int getObserverId(){
-        return observerID;
-    }
     public ArrayList<Region> getRegionsInContinent(){
         return new ArrayList<>(regions.values());
     }

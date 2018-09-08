@@ -12,13 +12,14 @@ public class GameState {
     public void initialiseState()  {
         addContinentValues();
         try {
+            createDeck();
             createContinentsAndRegions();
+            createPlayers();
+            assignTerritoriesToPlayers();    //this method deals the cards to the players assigning them initial ownership of regions
+            populateRegionNeighbours();
         }catch (IOException e ){
-            System.out.println("Searching for file in ");
             e.printStackTrace();
         }
-        createPlayers();
-        assignTerritoriesToPlayers();    //this method deals the cards to the players assigning them initial ownership of regions
         deck.add(new Card(null,UnitType.WILDCARD, null));
         deck.add(new Card(null, UnitType.WILDCARD, null));
         Collections.shuffle(deck);
@@ -53,7 +54,9 @@ public class GameState {
                 regionsInCont.put(region, temp);
             }
             System.out.println(regionsInCont.size());
-            continents.put(s,new Continent(regionsInCont, continentReinforcementValues.get(s)));
+            Continent continent= new Continent(regionsInCont, continentReinforcementValues.get(s));
+            continent.registerWithRegions();
+            continents.put(s,continent);
         }
     }
     public static void createDeck() throws IOException {
@@ -91,8 +94,23 @@ public class GameState {
                 }catch(IndexOutOfBoundsException e){
                     break;
                 }
-
             }
+        }
+    }
+    private void populateRegionNeighbours()throws IOException{
+        File f = new File("res/AllRiskCards.txt");
+        BufferedReader b = new BufferedReader(new FileReader(f));
+        String readline="";
+        while((readline = b.readLine())!=null){
+            int numberOfValues = readline.split(",").length;
+            Region regionThatHasNeighbours = regions.get(readline.split(",")[0]);   //this is the region that we are adding neighbours to
+            String[] str_regionsConnected = new String[numberOfValues-3]; //this extracts the neighbours from the text file
+            ArrayList<Region> neighbouringRegions = new ArrayList<>();
+            System.arraycopy(readline.split(","),3, str_regionsConnected,0,numberOfValues-3);
+            for(String str : str_regionsConnected){
+                neighbouringRegions.add(regions.get(str));  //query the regions hashmap with the string value of each neighbour found in the text file and get the corresponding Region
+            }
+            regionThatHasNeighbours.addNeighbourRegions(neighbouringRegions);
         }
     }
     public Continent getContinent(String continentName){
@@ -100,5 +118,8 @@ public class GameState {
     }
     public Player getPlayer(PlayerEnum player){
         return players.get(player);
+    }
+    public HashMap<String, Region> getRegions(){
+        return (HashMap)regions;
     }
 }

@@ -3,7 +3,7 @@ public class Neutral extends Player {
         super(PlayerEnum.NEUTRAL);
     }
     @Override
-    public void startTurn(GameState state) {
+    public void startTurn(GameState state, GameStateMediator mediator) {
         System.out.println("turn started for Neutral");
     }
 }

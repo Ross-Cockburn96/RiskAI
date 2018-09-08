@@ -6,9 +6,9 @@ public class MoveAction implements PlayerAction {
     private GameStateMediator m;
     private Region origin;
     private Region destination;
-    private ArrayList<UnitType> units;
+    private int units;
 
-    public MoveAction(GameStateMediator m, Region origin, Region destination, ArrayList<UnitType> units){
+    public MoveAction(GameStateMediator m, Region origin, Region destination, int units){
         this.m =m;
         this.origin = origin;
         this.destination = destination;

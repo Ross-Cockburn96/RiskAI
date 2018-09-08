@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class Player implements Observer {
 
-    protected ArrayList<Region> ownedRegions;
+    protected HashMap<String, Region> ownedRegions;
     protected PlayerEnum whoAmI;
     private static int observerIDTracker = 0;
     private int observerID = 0;
 
-    public Player(ArrayList<Region> ownedRegions, PlayerEnum player){
+    /*public Player(ArrayList<Region> ownedRegions, PlayerEnum player){
         this.ownedRegions = ownedRegions;
         this.whoAmI = player;
         observerID = ++observerIDTracker;
@@ -15,15 +16,15 @@ public abstract class Player implements Observer {
         for(Subject s : ownedRegions){
             s.register(this);
         }
-    }
+    }*/
     public Player(PlayerEnum player){
-        ownedRegions = new ArrayList<>();
+        ownedRegions = new HashMap<>();
         this.whoAmI = player;
         observerID = ++observerIDTracker;
         System.out.println("New Player created called " + player + " id No. "+ observerIDTracker);
     }
     public void addOwnedRegion(Region r){
-        ownedRegions.add(r);
+        ownedRegions.put(r.toString(), r);
         r.register(this);
     }
     @Override
@@ -39,5 +40,5 @@ public abstract class Player implements Observer {
     public int getObserverID() {
         return observerID;
     }
-    public abstract void startTurn(GameState state);
+    public abstract void startTurn(GameState state, GameStateMediator mediator);
 }
