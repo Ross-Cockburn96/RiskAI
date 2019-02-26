@@ -1,0 +1,4 @@
+Indonesia,Soldier,Australia,
+Eastern Australia,Horse,Australia
+Western Australia,Canon,Australia
+New Guinea,Horse,Australia

@@ -1,0 +1,42 @@
+Japan,Horse,Asia,Mongolia,Kamchatka
+China,Canon,Asia,Siam,India,Afghanistan,Ural,Siberia,Mongolia
+Ukraine,Soldier,Europe,Ural,Afghanistan,Middle East,Southern Europe,Northern Europe,Scandinavia
+North Africa,Soldier,Africa,Brazil,Western Europe,Southern Europe,Egypt,East Africa,Congo
+Congo,Canon,Africa,North Africa,East Africa,South Africa
+Afghanistan,Soldier,Asia,Middle East,India,China,Ural,Ukraine
+Middle East,Canon,Asia,Egypt,Southern Europe,Ukraine,Afghanistan,India,East Africa
+Venezuela,Horse,S_America,Central America,Brazil,Peru
+Southern Europe,Soldier,Europe,Egypt,North Africa,Western Europe,Northern Europe,Ukraine,Middle East
+Northern Europe,Horse,Europe,Southern Europe,Western Europe,Great Britain,Scandinavia,Ukraine
+Greenland,Horse,N_America,Northwest Territory,Ontario,Quebec,Iceland
+Siam,Horse,Asia,India,China,Indonesia
+Irkutsk,Canon,Asia,Kamchatka,Mongolia,Siberia,Yakutsk
+India,Horse,Asia,Siam,Middle East,Afghanistan,China
+Alberta,Canon,N_America,Alaska,Northwest Territory,Ontario,Western United States
+Egypt,Horse,Africa,East Africa,North Africa,Southern Europe,Middle East
+Kamchatka,Canon,Asia,Alaska,Japan,Mongolia,Irkutsk,Yakutsk
+Western Europe,Soldier,Europe,North Africa,Southern Europe,Northern Europe,Great Britain
+Indonesia,Soldier,Australia,Siam,New Guinea,Western Australia
+Yakutsk,Canon,Asia,Kamchatka,Irkutsk,Siberia
+Argentina,Soldier,S_America,Peru,Brazil
+Eastern Australia,Horse,Australia,Western Australia,New Guinea
+East Africa,Soldier,Africa,Congo,South Africa,Madagascar,Egypt,North Africa
+Western Australia,Canon,Australia,Eastern Australia,New Guinea,Indonesia
+Madagascar,Horse,Africa,South Africa,East Africa
+Siberia,Soldier,Asia,Yakutsk,Irkutsk,Mongolia,China,Ural
+Ontario,Canon,N_America,Quebec,Eastern United States,Western United States,Alberta,Northwest Territory,Greenland
+Central America,Soldier,N_America,Venezuela,Eastern United States,Western United States
+Brazil,Soldier,S_America,North Africa,Argentina,Peru,Venezuela
+Northwest Territory,Horse,N_America,Alaska,Greenland,Ontario,Alberta
+Peru,Horse,S_America,Argentina,Brazil,Venezuela
+South Africa,Canon,Africa,Madagascar,East Africa,Congo
+Western United States,Canon,N_America,Central America,Eastern United States,Ontario,Alberta
+Quebec,Canon,N_America,Greenland,Ontario,Eastern United States
+Great Britain,Soldier,Europe,Iceland,Scandinavia,Northern Europe,Western Europe
+Scandinavia,Soldier,Europe,Iceland,Ukraine,Northern Europe,Great Britain
+Mongolia,Horse,Asia,Japan,Kamchatka,Irkutsk,Siberia,China
+Ural,Soldier,Asia,Siberia,China,Afghanistan,Ukraine
+Iceland,Horse,Europe,Greenland,Scandinavia,Great Britain
+Eastern United States,Canon,N_America,Quebec,Ontario,Western United States,Central America
+New Guinea,Horse,Australia,Eastern Australia,Western Australia,Indonesia
+Alaska,Canon,N_America,Kamchatka,Northwest Territory,Alberta

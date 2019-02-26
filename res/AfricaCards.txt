@@ -1,0 +1,6 @@
+North Africa,Soldier,Africa
+Congo,Canon,Africa
+Egypt,Horse,Africa
+East Africa,Soldier,Africa
+Madagascar,Horse,Africa
+South Africa,Canon,Africa

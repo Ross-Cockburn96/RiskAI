@@ -1,0 +1,9 @@
+Greenland,Horse,N_America
+Alberta,Canon,N_America
+Ontario,Canon,N_America
+Central America,Soldier,N_America
+Northwest Territory,Horse,N_America
+Western United States,Canon,N_America
+Quebec,Canon,N_America
+Eastern United States,Canon,N_America
+Alaska,Canon,N_America
